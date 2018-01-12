@@ -1,0 +1,112 @@
+using System;
+
+namespace MathChallenge
+
+{
+    class Program
+
+    {
+        static void Main(string[] args)
+
+        {
+            //DECLARE VARIABLES
+
+            string FirstNumber, SecondNumber;
+            int convertFirstNumber, convertSecondNumber;
+
+
+            //GET INPUT FOR THE CALCULATIONS
+
+            Console.WriteLine("Hi! I am a mathmatical genius.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine(" ");
+            Console.WriteLine("No, really, I'll prove it! Watch this...");
+
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine(" ");
+            Console.WriteLine("Please enter a 3-digit number: ");
+            FirstNumber = Console.ReadLine();
+         
+            ////add validation for data types
+
+            Console.WriteLine("Please enter another 3-digit number: ");
+            SecondNumber = Console.ReadLine();
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Total: ");
+            System.Threading.Thread.Sleep(1000); 
+
+
+            //CONVERT STRING INPUT TO NUMBERS
+
+            convertFirstNumber = Convert.ToInt16(FirstNumber);
+            convertSecondNumber = Convert.ToInt16(SecondNumber);
+
+            Console.WriteLine(convertFirstNumber + convertSecondNumber);
+
+            Console.WriteLine(" ");
+            Console.WriteLine("And now for my next trick...");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine("I will now add each number position together (one's place, tens and hundreds).");
+            System.Threading.Thread.Sleep(1000);
+
+
+            //SEPARATE STRING INTO INDIVIDUAL NUMBERS -- ????
+
+            ////try a char array because it will automatically break it into the individual units
+
+                //example: 
+                //Number1 = 153
+                //Number2 = 345 => 1 + 3 ≠ 5 + 4 ≠ 3 + 5
+                //Program prints False.
+
+                //example2: 
+                //Number1 = 543
+                //Number2 = 456 => 5 + 4 = 4 + 5 = 3 + 6
+                //Program prints True.
+
+
+            //char[] FirstNumberArray = { };
+            //FirstNumberArray[0] = ;
+            //FirstNumberArray[1] = ;
+            //FirstNumberArray[2] = ;
+
+            //char[] SecondNumberArray = { };
+            //SecondNumberArray[0] = ;
+            //SecondNumberArray[1] = ;
+            //SecondNumberArray[2] = ;
+
+
+            //GET TOTAL FOR EACH ARRAY POSITION
+            //Console.WriteLine(FirstNumberArray[0] + SecondNumberArray[0]);
+            //Console.WriteLine(FirstNumberArray[1] + SecondNumberArray[1]);
+            //Console.WriteLine(FirstNumberArray[2] + SecondNumberArray[2]);
+
+            ////try a for loop in order to check the subsequent positions????
+
+
+            //COMPARE EACH POSITION - DOES EACH PLACE ADD UP TO SAME NUMBER
+
+
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Press any key to quiz me.");
+            Console.ReadLine();
+            Console.WriteLine("The numbers of each place all add up to the same total (ie. 123 + 321 = 444); True or False?");
+            System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine(" ");
+            Console.WriteLine("I hereby declare the answer is " + "(answer)!");  // insert BOOL true/false - ????
+            Console.WriteLine(" ");
+            Console.WriteLine("Told ya I was smart :-) ");
+
+            Console.ReadLine();
+        }
+
+    }
+
+}
+
+
+
