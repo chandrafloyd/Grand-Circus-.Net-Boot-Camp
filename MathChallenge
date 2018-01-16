@@ -1,0 +1,143 @@
+  using System;
+
+namespace MathChallenge1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //DECLARE VARIABLES
+            string FirstNumber, SecondNumber;
+            int FirstNumberLength, SecondNumberLength;
+            int convertFirstNumber, convertSecondNumber, convertedTotal;
+
+            
+            //INTRO
+            Console.WriteLine("Hello World! I am a mathmatical genius.");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine(" ");
+            Console.WriteLine("No, really, I'll prove it! Watch this...");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine(" ");
+
+
+            //REQUEST FirstNumber
+            Console.WriteLine("Please enter a 3-digit number: ");
+            FirstNumber = Console.ReadLine();
+
+
+            //VALIDATE FirstNumber IS 3 DIGITS
+            FirstNumberLength = FirstNumber.Length;
+                //UNIT TEST TO VALIDATE STRING LENGTH CALCULATES
+                //Console.WriteLine("The entry is " + FirstNumberLength + " digits long");
+
+            if (FirstNumberLength >= 4 || FirstNumberLength <= 2)
+            {
+                Console.WriteLine("Please enter a 3 digit number");
+            }
+
+
+            //TURN FirstNumber STRING INTO INDIVIDUAL CHARACTERS -- Array #1
+            char[] FirstNumberArray = FirstNumber.ToCharArray();
+            for (int i = 0; i < FirstNumber.Length; i++)
+            {
+                //UNIT TEST TO VALIDATE THE CHARS ARE SPLIT
+                //Console.WriteLine(FirstNumberArray[i]);  //this splits the number, one digit on a new line  
+
+            }
+
+                ////UNIT TEST TO VALIDATE THAT THE DIGITS ARE CORRECTLY IDENTIFIED
+                //Console.WriteLine("This is a test. The 1st digit of the First Number is " + FirstNumberArray[0]);
+                //Console.WriteLine("This is a test. The 2nd digit of the First Number is " + FirstNumberArray[1]);
+                //Console.WriteLine("This is a test. The 3rd digit of the First Number is " + FirstNumberArray[2]);
+                //Console.WriteLine(" ");
+
+            //REQUEST SecondNumber
+            Console.WriteLine("Please enter another 3-digit number: ");
+            SecondNumber = Console.ReadLine();
+
+
+            //VALIDATE SecondNumber IS 3 DIGITS
+            SecondNumberLength = SecondNumber.Length;
+                //UNIT TEST TO VALIDATE STRING LENGTH CALCULATES
+                //Console.WriteLine("The entry is " + SecondNumberLength + " digits long");
+
+            if (SecondNumberLength >= 4 || SecondNumberLength <= 2)
+            {
+                Console.WriteLine("Please enter a 3 digit number");
+            }
+
+
+            //TURN SecondNumber STRING INTO INDIVIDUAL CHARACTERS -- Array #2
+            char[] SecondNumberArray = SecondNumber.ToCharArray();
+            for (int i = 0; i < SecondNumber.Length; i++)
+            {
+                Console.WriteLine(SecondNumberArray[i]);  //this splits the number, one digit on a new line  //comment out as a unit test later
+
+            }
+
+                ////UNIT TEST TO VALIDATE THAT THE DIGITS ARE CORRECTLY IDENTIFIED
+                //Console.WriteLine("This is a test. The 1st digit of the Second Number is " + SecondNumberArray[0]);
+                //Console.WriteLine("This is a test. The 2nd digit of the Second Number is " + SecondNumberArray[1]);
+                //Console.WriteLine("This is a test. The 3rd digit of the Second Number is " + SecondNumberArray[2]);
+                //Console.WriteLine(" ");
+
+
+            //GET MATH TOTAL OF CONVERTED FirstNumber AND SecondNumber
+            convertFirstNumber = Convert.ToInt16(FirstNumber);
+            convertSecondNumber = Convert.ToInt16(SecondNumber);
+            convertedTotal = convertFirstNumber + convertSecondNumber;
+            Console.WriteLine("The total is: " + convertedTotal);
+            char TotalIntToChar = Convert.ToChar(convertedTotal);
+
+
+            //NEXT TRICK
+            Console.WriteLine("And now for my next trick...");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("I will now add each number position together (one's place, tens and hundreds).");
+            Console.WriteLine(" ");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Press any key to quiz me.");
+            Console.ReadLine();
+          
+
+            //TURN convertedTotal Int INTO INDIVIDUAL CHARACTERS  -- Array #3
+            char[] TotalArray = TotalIntToChar.ToCharArray();
+            for (int i = 0; i < TotalArray.Length; i++)
+            {
+           
+                //UNIT TEST TO VALIDATE THE CHARS ARE SPLIT
+                //Console.WriteLine(SecondNumberArray[i]);  //this splits the number, one digit on a new line  
+
+
+                ////UNIT TEST TO VALIDATE THAT THE DIGITS ARE CORRECTLY IDENTIFIED
+                //Console.WriteLine("This is a test. The 1st digit of the Total is " + TotalArray[0]); 
+                //Console.WriteLine("This is a test. The 2nd digit of the Total is " + TotalArray[1]);
+                //Console.WriteLine("This is a test. The 3rd digit of the Total is " + TotalArray[2]);
+                //Console.WriteLine(" ");
+
+
+                Console.WriteLine("The numbers of each place all add up to the same total (ie. 123 + 321 = 444)");
+                Console.WriteLine("True or False?");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine(" ");
+                if (TotalArray[0] == TotalArray[1] && TotalArray[1] == TotalArray[2])
+                {
+                    Console.WriteLine("True");
+                }
+                 else
+                {
+                    Console.WriteLine("False");
+                }
+
+                //END PROGRAM
+                Console.WriteLine(" ");
+                Console.WriteLine("Told ya I was smart :-) ");
+                Console.ReadLine();
+            }
+        }
+
+    }
+}
