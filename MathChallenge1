@@ -1,0 +1,164 @@
+using System;
+
+namespace MathChallenge1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //DECLARE VARIABLES
+                string FirstNumber, SecondNumber;
+                int FirstNumberLength, SecondNumberLength;
+                int convertedToIntFirstNumber, convertedToIntSecondNumber, convertedTotal;
+
+
+            //INTRO
+                Console.WriteLine("Hello World! I am a mathematical genius.");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine(" ");
+                Console.WriteLine("No, really, I'll prove it! Watch this...");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine(" ");
+
+
+            //REQUEST FirstNumber
+
+                Console.WriteLine("Please enter a 3-digit number: ");
+                FirstNumber = Console.ReadLine();
+
+
+            //VALIDATE FirstNumber IS 3 DIGITS
+
+                FirstNumberLength = FirstNumber.Length;
+                    //UNIT TEST: VALIDATE FirstNumber STRING LENGTH 
+                    //Console.WriteLine("The entry is " + FirstNumberLength + " digits long");
+
+                if (FirstNumberLength >= 4 || FirstNumberLength <= 2)
+                {
+                    Console.WriteLine("Please enter a 3 digit number");
+                }
+
+
+            //CONVERT FirstNumber STRING INTO INDIVIDUAL CHARACTERS -- Array #1
+
+                char[] FirstNumberArray = FirstNumber.ToCharArray();
+                for (int i = 0; i < FirstNumber.Length; i++)
+                {
+                    ////UNIT TEST: VALIDATE FirstNumber CHARS ARE SPLIT
+                    //Console.WriteLine(FirstNumberArray[i]);  //this splits the number, one digit on a new line  
+
+                }
+
+                    ////UNIT TEST: VALIDATE THAT FirstNumber DIGITS ARE CORRECTLY IDENTIFIED
+                    //Console.WriteLine("This is a test. The 1st digit of the First Number is " + FirstNumberArray[0]);
+                    //Console.WriteLine("This is a test. The 2nd digit of the First Number is " + FirstNumberArray[1]);
+                    //Console.WriteLine("This is a test. The 3rd digit of the First Number is " + FirstNumberArray[2]);
+                    //Console.WriteLine(" ");
+
+
+            //REQUEST SecondNumber
+
+                Console.WriteLine("Please enter another 3-digit number: ");
+                SecondNumber = Console.ReadLine();
+
+
+            //VALIDATE SecondNumber IS 3 DIGITS
+
+               SecondNumberLength = SecondNumber.Length;
+
+                    ////UNIT TEST: VALIDATE SecondNumber STRING LENGTH 
+                    //Console.WriteLine("The entry is " + SecondNumberLength + " digits long");
+
+                if (SecondNumberLength >= 4 || SecondNumberLength <= 2)
+                {
+                    Console.WriteLine("Please enter a 3 digit number");
+                }
+
+
+            //CONVERT SecondNumber STRING INTO INDIVIDUAL CHARACTERS -- Array #2
+
+                char[] SecondNumberArray = SecondNumber.ToCharArray();
+                for (int i = 0; i < SecondNumber.Length; i++)
+                {
+
+                       ////UNIT TEST: VALIDATE SecondNumber CHARS ARE SPLIT
+                       //Console.WriteLine(SecondNumberArray[i]);  //this splits the number, one digit on a new line  
+
+                }
+
+                    ////UNIT TEST: VALIDATE THAT SecondNumber DIGITS ARE CORRECTLY IDENTIFIED
+                    //Console.WriteLine("This is a test. The 1st digit of the Second Number is " + SecondNumberArray[0]);
+                    //Console.WriteLine("This is a test. The 2nd digit of the Second Number is " + SecondNumberArray[1]);
+                    //Console.WriteLine("This is a test. The 3rd digit of the Second Number is " + SecondNumberArray[2]);
+                    //Console.WriteLine(" ");
+
+
+            //CONVERT FirstNumber AND SecondNumber TO INTS AND DO THE MATH  //validates that the numbers were converted correctly; not needed to compare the digits
+
+                convertedToIntFirstNumber = Convert.ToInt16(FirstNumber);
+                convertedToIntSecondNumber = Convert.ToInt16(SecondNumber);
+                convertedTotal = convertedToIntFirstNumber + convertedToIntSecondNumber;
+                Console.WriteLine("The total is: " + convertedTotal);
+
+
+            //ADD FirstNumber AND SecondNumber ARRAY POSITIONS 
+
+                //FirstNumber ARRAY POSITIONS
+                    char FN1 = FirstNumberArray[0];
+                    char FN2 = FirstNumberArray[1];
+                    char FN3 = FirstNumberArray[2];
+
+                //SecondNumber ARRAY POSITIONS
+                    char SN1 = SecondNumberArray[0];
+                    char SN2 = SecondNumberArray[1];
+                    char SN3 = SecondNumberArray[2];
+
+                //ADD POSITIONS
+                    int FirstPositions = FN1 + SN1;
+                    int SecondPositions = FN2 + SN2;
+                    int ThirdPositions = FN3 + SN3;
+
+            //NEW ARRAY BY DIGIT POSITION
+                int[] PositionSums = {FirstPositions, SecondPositions, ThirdPositions};
+
+
+            //NEXT TRICK
+                Console.WriteLine("And now for my next trick...");
+                Console.WriteLine(" ");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("I will now add each number position together (one's place, tens and hundreds).");
+                Console.WriteLine(" ");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("Press any key to quiz me.");
+                Console.ReadLine();
+
+
+            //QUIZ ME
+                Console.WriteLine("The numbers of each place all add up to the same total (ie. 123 + 321 = 444)");
+                Console.WriteLine("True or False?");
+                Console.WriteLine("Hmmm..let me think a moment....");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine(" ");
+
+
+                    if (FirstPositions == SecondPositions && SecondPositions ==  ThirdPositions)
+
+                        {
+                            Console.WriteLine("True!");
+                        }
+                    else
+                        {
+                            Console.WriteLine("False!");
+                        }
+
+
+            //END PROGRAM
+            Console.WriteLine(" ");
+                Console.WriteLine("Told ya I was smart :-) ");
+                Console.ReadLine();
+            }
+        }
+
+    }
+//}
