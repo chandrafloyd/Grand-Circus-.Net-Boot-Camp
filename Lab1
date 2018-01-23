@@ -1,0 +1,42 @@
+using System;
+
+namespace Lab1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Intro
+            Console.WriteLine("Welcome to Grand Circus' Room Detail Generator!");
+            Console.WriteLine();
+            //Input - Get values
+
+           
+                double Width, Length;
+
+                Console.WriteLine("Enter length:");
+                Length = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter width:");
+                Width = double.Parse(Console.ReadLine());
+
+
+                //Processing - Formulas for area and perimeter
+
+                double Area = Length * Width;
+                double Perimeter = Length + Length + Width + Width;
+
+
+                //Output 
+                Console.WriteLine("Area: " + Area);
+                Console.WriteLine("Perimeter: " + Perimeter);
+
+                Console.ReadLine();
+
+
+           
+            }
+
+        
+        }
+    }
